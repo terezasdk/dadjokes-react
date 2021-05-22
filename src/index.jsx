@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './style.css';
+import Joke from './Joke/index';
+import './jokes.js';
 
 const App = () => {
   const [scoreLike, setScoreLike] = useState(0);
