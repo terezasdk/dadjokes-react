@@ -2,13 +2,25 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import Joke from './Joke';
-import { jokes } from './jokes.js';
+import { jokes } from './jokes';
 
-const App = (props) => {
+// prvni foto z 15. kvetna
+const App = () => {
   return (
     <>
       <div className="container">
-        <Joke seznamVtipu={jokes} />;
+        {jokes.map((joke) => {
+          return (
+            <Joke
+              key={joke.id}
+              userAvatar={joke.avatar}
+              userName={joke.name}
+              text={joke.text}
+              likes={joke.likes}
+              dislikes={joke.dislikes}
+            ></Joke>
+          );
+        })}
       </div>
     </>
   );

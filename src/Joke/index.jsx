@@ -3,8 +3,8 @@ import './style.css';
 
 //pět props: userAvatar, userName, text, likes, dislikes
 const Joke = (props) => {
-  const [scoreLike, setScoreLike] = useState(0);
-  const [scoreDislike, setScoreDislike] = useState(0);
+  const [scoreLike, setScoreLike] = useState(props.likes);
+  const [scoreDislike, setScoreDislike] = useState(props.dislikes);
 
   const handleClickLike = () => {
     setScoreLike(scoreLike + 1);
@@ -33,7 +33,6 @@ const Joke = (props) => {
           ></button>
           <span id="likes-up" className="likes-count likes-count--up">
             {scoreLike}
-            {props.likes}
           </span>
           <button
             onClick={handleClickDislike}
@@ -42,7 +41,6 @@ const Joke = (props) => {
           ></button>
           <span id="likes-down" className="likes-count likes-count--down">
             {scoreDislike}
-            {props.dislikes}
           </span>
         </div>
       </div>
